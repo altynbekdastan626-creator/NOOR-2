@@ -2089,6 +2089,47 @@
             document.body.style.overflow = 'auto'; 
         }
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Получаем номер стола из ссылки (например, если ссылка заканчивается на ?table=7)
+    const urlParams = new URLSearchParams(window.location.search);
+    const tableNumber = urlParams.get('table');
+
+    // 2. Находим ваш выпадающий список столов
+    const selectElement = document.querySelector('select'); 
+
+    if (selectElement) {
+        if (tableNumber) {
+            // Автоматически выставляем номер стола из QR-кода
+            selectElement.value = tableNumber; 
+            
+            // ПРИМЕЧАНИЕ: Если у вас в коде внутри <option value="..."> написан текст вроде "Стол № 7", 
+            // то сотрите две косые черты у строки ниже, а строку выше удалите:
+            // selectElement.value = "Стол № " + tableNumber;
+
+            // Уведомляем систему, что значение изменилось
+            selectElement.dispatchEvent(new Event('change'));
+
+            // 3. ЖЕСТКАЯ БЛОКИРОВКА ДЛЯ ГОСТЯ (но безопасная для отправки данных)
+            selectElement.style.pointerEvents = "none"; // Полностью отключает клики и тапы пальцем
+            selectElement.setAttribute("tabindex", "-1"); // Отключает возможность выбрать через клавиатуру
+            
+            // 4. Скрываем стрелочку списка, чтобы он выглядел как обычный красивый текст
+            selectElement.style.appearance = "none";
+            selectElement.style.webkitAppearance = "none";
+            selectElement.style.mozAppearance = "none";
+            selectElement.style.opacity = "1"; // Сохраняем яркость текста
+            
+            console.log("Стол №" + tableNumber + " успешно зафиксирован.");
+        } else {
+            // Что делать, если гость зашел вообще без QR-кода (по прямой ссылке):
+            // Можно, например, по умолчанию поставить 1-й стол и тоже заблокировать, чтобы не путать систему:
+            // selectElement.value = "1";
+            // selectElement.style.pointerEvents = "none";
+        }
+    }
+});
+</script>
 </body>
 </html>
 

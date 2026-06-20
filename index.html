@@ -862,13 +862,53 @@
 
         const menuData = {
             "snacks": {
-                name: { kk: "Тіске басарлар", ru: "Закуски", en: "Appetizers" },
-                items: [
-                    { id: "sn1", name: { kk: "Жылқы еті деликатестерінің ассортиі", ru: "Ассорти традиционных деликатесов из конины", en: "Traditional horse meat delicacies assortment" }, price: 6700, img: "https://i.ibb.co.com/Tx1HyFbJ/1780561493265.png" },
-                    { id: "sn2", name: { kk: "Тақтадағы балғын көкөністер ассортиі", ru: "Ассорти свежих овощей на доске", en: "Fresh vegetables assortment on a board" }, price: 4200, img: "https://i.ibb.co.com/1JQqXS0N/1780562934199.png" },
-                    { id: "sn3", name: { kk: "Еуропалық ірымшік тақтасы (5 түрі)", ru: "Сырная доска из 5 видов европейского сыра", en: "Cheese board of 5 types of European cheese" }, price: 7900, img: "https://i.ibb.co.com/tP4dnH9q/IMG-20260604-140007.png" },
-                    { id: "sn4", name: { kk: "Норвегиялық албырт балығынан гравлакс триосы", ru: "Трио гравлакс из норвежской семги", en: "Norwegian salmon gravlax trio" }, price: 8900, img: "https://i.ibb.co.com/KzqXS833/1780564335620.png" }
-                ]
+    name: { kk: "Тіске басарлар", ru: "Закуски", en: "Appetizers" },
+    items: [
+        { 
+            id: "sn1", 
+            name: { kk: "Жылқы еті деликатестерінің ассортиі", ru: "Ассорти традиционных деликатесов из конины", en: "Traditional horse meat delicacies assortment" }, 
+            price: 6700, 
+            img: "https://i.ibb.co.com/Tx1HyFbJ/1780561493265.png",
+            description: {
+                kk: "Құрамы: дәстүрлі қазы, шырынды жая, сүр ет және қарта. Жаңа піскен пияз бен хош иісті көк шөптермен бірге ұсынылады.",
+                ru: "Состав: традиционный казы, сочное жая, сүр ет и карта. Подается со свежим луком и ароматной зеленью.",
+                en: "Ingredients: traditional kazy, juicy zhaya, sur et, and karta. Served with fresh onions and aromatic greens."
+            }
+        },
+        { 
+            id: "sn2", 
+            name: { kk: "Тақтадағы балғын көкөністер ассортиі", ru: "Ассорти свежих овощей на доске", en: "Fresh vegetables assortment on a board" }, 
+            price: 4200, 
+            img: "https://i.ibb.co.com/1JQqXS0N/1780562934199.png",
+            description: {
+                kk: "Құрамы: қытырлақ қияр, піскен қызанақ, тәтті болгар бұрышы, шомыр және балғын фермерлік көк шөптер жиынтығы.",
+                ru: "Состав: хрустящие огурцы, спелые томаты, сладкий болгарский перец, редис и микс свежей фермерской зелени.",
+                en: "Ingredients: crispy cucumbers, ripe tomatoes, sweet bell peppers, radishes, and a mix of fresh farm greens."
+            }
+        },
+        { 
+            id: "sn3", 
+            name: { kk: "Еуропалық ірымшік тақтасы (5 түрі)", ru: "Сырная доска из 5 видов европейского сыра", en: "Cheese board of 5 types of European cheese" }, 
+            price: 7900, 
+            img: "https://i.ibb.co.com/tP4dnH9q/IMG-20260604-140007.png",
+            description: {
+                kk: "Құрамы: бес түрлі талғампаз еуропалық ірімшіктер (дорблю, пармезан, камамбер, гауда, чеддер). Табиғи балмен, жаңғақтармен және жүзіммен ұсынылады.",
+                ru: "Состав: пять видов изысканных европейских сыров (дорблю, пармезан, камамбер, гауда, чеддер). Подается с натуральным медом, орехами и виноградом.",
+                en: "Ingredients: five types of exquisite European cheeses (dorblu, parmesan, camembert, gauda, cheddar). Served with natural honey, nuts, and grapes."
+            }
+        },
+        { 
+            id: "sn4", 
+            name: { kk: "Норвегиялық албырт балығынан гравлакс триосы", ru: "Трио гравлакс из норвежской семги", en: "Norwegian salmon gravlax trio" }, 
+            price: 8900, 
+            img: "https://i.ibb.co.com/KzqXS833/1780564335620.png",
+            description: {
+                kk: "Құрамы: норвегиялық албырт балығынан жасалған әлсіз тұздалған фирмалық гравлакстың үш түрі (классикалық, қызылшамен және аскөкпен). Лимон және каперстермен бірге.",
+                ru: "Состав: три вида фирменного слабосоленого гравлакса из норвежской семги (классический, со свеклой и с укропом). Подается с лимоном и каперсами.",
+                en: "Ingredients: three types of signature lightly salted Norwegian salmon gravlax (classic, with beetroot, and with dill). Served with lemon and capers."
+            }
+        }
+    ]
             },
             "salads": {
                 name: { kk: "Салаттар", ru: "Салаты", en: "Salads" },

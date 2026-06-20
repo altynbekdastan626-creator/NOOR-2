@@ -2101,30 +2101,31 @@ let manualScrollTimer = null;
                 btn.disabled = false; 
             });
         }
-
         // --- ФУНКЦИИ ОТКРЫТИЯ КАРТОЧКИ БЛЮДА ---
-        function openItemDetails(id) {
-            const lookup = findItemById(id);
-            if (!lookup) return;
-            const item = lookup.item;
-            
-            document.getElementById('detailImg').src = item.img;
-            document.getElementById('detailTitle').innerText = item.name[currentLang];
-            
-            let descText = "";
-            if (item.desc && item.desc[currentLang]) {
-                descText = item.desc[currentLang];
-            } else {
-                if (currentLang === 'ru') descText = "Подробное описание скоро появится.";
-                if (currentLang === 'kk') descText = "Толық сипаттама жақында қосылады.";
-                if (currentLang === 'en') descText = "Detailed description coming soon.";
-            }
-            
-            document.getElementById('detailDesc').innerText = descText;
-            document.getElementById('itemDetailModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-        }
-
+function openItemDetails(id) {
+    const lookup = findItemById(id);
+    if (!lookup) return;
+    const item = lookup.item;
+    
+    document.getElementById('detailImg').src = item.img;
+    document.getElementById('detailTitle').innerText = item.name[currentLang];
+    
+    let descText = "";
+    
+    // ИСПРАВЛЕНИЕ: здесь мы поменяли item.desc на item.description
+    if (item.description && item.description[currentLang]) {
+        descText = item.description[currentLang];
+    } else {
+        // Заглушка, которая сработает для всех остальных блюд, где состава пока нет
+        if (currentLang === 'ru') descText = "Подробное описание скоро появится.";
+        if (currentLang === 'kk') descText = "Толық сипаттама жақында қосылады.";
+        if (currentLang === 'en') descText = "Detailed description coming soon.";
+    }
+    
+    document.getElementById('detailDesc').innerText = descText;
+    document.getElementById('itemDetailModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; 
+}
         function closeItemDetails() {
             document.getElementById('itemDetailModal').style.display = 'none';
             document.body.style.overflow = 'auto'; 
